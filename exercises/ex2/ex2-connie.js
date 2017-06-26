@@ -1,15 +1,12 @@
-function foo() {
-	console.log(a1);
-	console.log(a2);
-
-	return "";	
+function foo(a, b, c, ...rest) {
+	return [a, ...rest];
 }
 
 function bar() {
 	var a1 = [ 2, 4 ];
 	var a2 = [ 6, 8, 10, 12 ];
 
-	return foo();
+	return foo(...a1, ...a2);
 }
 
 console.log(
