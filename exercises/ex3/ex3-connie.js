@@ -30,11 +30,25 @@ var defaults = {
 	}
 };
 
-function response() {
+function response({
+		foo = defaults.foo,
+		baz,
+		bar = defaults.bar,
+		bam: {
+			qux = defaults.bam.qux,
+			qam = defaults.bam.qam
+		} = {}
+	} = {}) {
 
 	check({
-
-	});
+		foo,
+		bar,
+		baz,
+		bam: {
+			qux,
+			qam
+	  }
+	})
 
 }
 
